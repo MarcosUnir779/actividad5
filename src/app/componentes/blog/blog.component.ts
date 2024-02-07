@@ -21,7 +21,7 @@ export class BlogComponent {
   {
     titulo: "Juanma Castaño y el derbi asturiano, en COPE Asturias: 'El Oviedo es favorito'",
     imagenUrl: "https://www.cope.es/emisoras/asturias/asturias-provincia/deportes-cope-asturias/noticias/juanma-castano-derbi-asturiano-cope-asturias-oviedo-favorito-20240207_3133968",
-    cuerpoTexto: "Cuerpo de la noticia 2",
+    cuerpoTexto: "Juanma Castaño ya siente el derbi asturiano. El director del Partidazo de COPE, que se encuentra en Asturias estos días, ha hablado sobre el duelo entre Real Sporting y Real Oviedo de este sábado (18:30 horas) en El Molinón, en Deportes COPE Asturias.",
     fecha: "2024-02-07"
   }
 ];
@@ -50,7 +50,7 @@ export class BlogComponent {
   cargarDatos(): string{
     let html = ""
     this.arrNoticias.forEach( element =>{
-      html+= `<p>${element.titulo}-${element.imagenUrl}-${element.cuerpoTexto}-${element.fecha}</p>`
+      html+= `<p><strong>Título: </strong>${element.titulo} <br><strong>Imagen: </strong> <a href="${element.imagenUrl} target="_blank">${element.imagenUrl}</a><br>${element.cuerpoTexto}<br><strong>Fecha: </strong>${element.fecha}</p>`
     })
     return html;
   }
