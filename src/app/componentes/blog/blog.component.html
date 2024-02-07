@@ -1,23 +1,26 @@
-<form (ngSubmit) = "crearNoticia($event)">
-    <div class="row">
-        <div class="col-lg-3">
-            <label>Título:</label>
-            <input type="text" name="titulo" [(ngModel)]="newNoticia.titulo"/>
-        </div>
-        <div class="col-lg-3">
-            <label>Url:</label>
-            <input type="text" name="titulo" [(ngModel)]="newNoticia.imagen"/>
-        </div>
-        <div class="col-lg-3">
-            <label>Texto:</label>
-            <input type="text" name="titulo" [(ngModel)]="newNoticia.texto"/>
-        </div>
-        <div class="col-lg-3">
-            <label>Fecha:</label>
-            <input type="text" name="titulo" [(ngModel)]="newNoticia.fecha"/>
-        </div>
-        <div class="col-lg-3">
-            <button (click)="imprime()">Crear noticia</button>
-        </div>
+<section>
+    <!-- form -->
+    <div>
+        <label>Título:</label>
+        <input type="text" id="titulo" name="titulo" [(ngModel)]="newNoticia.titulo"/>
     </div>
-</form>
+    <div>
+        <label>Url:</label>
+        <input type="text" id="url" name="url" placeholder="https://ejemplo.com" [(ngModel)]="newNoticia.imagenUrl">
+    </div>
+    <div>
+        <label>Texto:</label>
+        <input type="text" id="cuerpoTexto" name="Cuerpo noticia" [(ngModel)]="newNoticia.cuerpoTexto"/>
+    </div>
+    <div>
+        <label>Fecha:</label>
+        <input type="text" id="fecha" name="fecha" placeholder="2024-02-07" [(ngModel)]="newNoticia.fecha">
+    </div>
+    <div>
+        <button (click)="crearNoticia()" [disabled]="!inputsRellenos()">Crear noticia</button>
+    </div>
+    <!-- pintar las noticias -->
+    <div [innerHTML]="cargarDatos()"></div>
+</section>
+   
+
