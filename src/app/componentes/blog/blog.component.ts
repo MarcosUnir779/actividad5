@@ -48,10 +48,15 @@ export class BlogComponent {
   }
 
   cargarDatos(): string{
-    let html = ""
-    this.arrNoticias.forEach( element =>{
-      html+= `<p><strong>Título: </strong>${element.titulo} <br><strong>Imagen: </strong> <a href="${element.imagenUrl} target="_blank">${element.imagenUrl}</a><br>${element.cuerpoTexto}<br><strong>Fecha: </strong>${element.fecha}</p>`
-    })
+    let html = "";
+    this.arrNoticias.forEach(element => {
+        html += `<article>
+                    <h3>${element.titulo}</h3>
+                    <a href="${element.imagenUrl}">${element.imagenUrl}</a>
+                    <p>${element.cuerpoTexto}</p>
+                    <p>${element.fecha}</p>
+                </article>`;
+    });
     return html;
   }
 

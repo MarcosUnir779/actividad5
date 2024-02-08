@@ -1,5 +1,5 @@
+<!-- form -->
 <section>
-    <!-- form -->
     <div>
         <label>Título:</label>
         <input type="text" id="titulo" name="titulo" [(ngModel)]="newNoticia.titulo"/>
@@ -19,8 +19,9 @@
     <div>
         <button (click)="crearNoticia()" [disabled]="!inputsRellenos()">Crear noticia</button>
     </div>
-    <!-- pintar las noticias -->
-    <div [innerHTML]="cargarDatos()"></div>
+</section>
+<!-- pintar las noticias -->
+<section [innerHTML]="cargarDatos()">
 </section>
    
 
